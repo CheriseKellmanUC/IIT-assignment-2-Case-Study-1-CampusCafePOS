@@ -1,0 +1,86 @@
+9 test cases, please see screenshots in documents submitted to canvas
+
+Test Case #1
+- Handwritten expectation: Order items and calculate total if not a student
+- Input(s): Menu items and quantities
+- Workings: Added items to order and selected “n” for not student
+- Expected output: Calculate final total of order: subtotal + tax
+- Program run (screenshot or transcript):
+ 
+- Actual output: Error message, type error.
+- Result: Fail. Calculation failed, changed code to “tax = subtotal * 0.10”
+Test Case #2
+- Handwritten expectation: Order items and calculate total if student
+- Input(s): Menu items and quantities
+- Workings: Added items to order and selected “y” for student
+- Expected output: Calculate final total of order: subtotal * discount + tax.
+- Program run (screenshot or transcript):
+ 
+- Actual output: NameError
+Result: Fail. Subtotal was not defined, checkout function was not created yet. Created def checkout().
+Test Case #3
+- Handwritten expectation: Order items and apply student discount
+- Input(s): Items and quantities
+- Workings: Entered items and quantities into program
+- Expected output: Display selection and ask for quantity
+ - Program run (screenshot or transcript):
+ 
+- Actual output: Selection was displayed and program asked for quantity
+- Result: Passed, however “Eggs” was displaying as “Eggss”. Changed “Eggs” to “Muffin” as code was displaying “Eggss” for hardcoded “{item}s”.
+
+
+
+Test Case #4
+- Handwritten expectation: Allow user to input “latte” or “Latte” and continue program through to checkout
+- Input(s): latte, 2, cart, done
+- Workings: Gave program items and quantity, viewed cart and asked to go to checkout “done”.
+- Expected output: Take user to checkout
+- Program run (screenshot or transcript):
+ 
+- Actual output: KeyError
+Result: Fail, program did not recognising ‘latte’. Created show_menu() function with nested ifs (i.e. if item.lower() == "latte")
+Test Case #5
+- Handwritten expectation: Take user through program until the order summary
+- Input(s): mocha, 2, cart, done, y
+- Workings: Entered items, quantity, viewed cart, went to checkout and entered y for student.
+- Expected output: Calculate total and show order summary.
+- Program run (screenshot or transcript):
+ 
+- Actual output: NameError
+- Result: Fail. “quantity” was changed to “qty” when checkout function was edited. Updated print statement.
+Test Case #6
+- Handwritten expectation: Allow user to enter items, quantities, view cart, apply student discount and take user through to order summary when done is entered.
+- Input(s): latte, matcha. 2, cart, done, y for student discount to be applied
+- Workings: Entered items and asked to view cart, entered done and y for discount to see if code worked as expected.
+- Expected output: Take user through program, calculate total with 5% discount and tax applied and show order summary.
+- Program run (screenshot or transcript):
+ 
+- Actual output: Program displayed order summary and subtotal with discount and tax applied.
+Result: Pass. Code works as expected.
+Test Case #7
+- Handwritten expectation: Allow user to enter items, and apply meal deal if drink and food are both selected.
+- Input(s): matcha, 2, bacon, 1, cart, done
+- Workings: Attempt 1 – testing if meal deal works
+- Expected output: Take user through program, calculate total with 5% student discount, 5 % meal deal and tax applied and show order summary.
+- Program run (screenshot or transcript):
+ 
+- Actual output: AttributeError. 
+Result: Fail. Error for “if selected_categories.length >= 2” Changed to “if len(selected_categories) >= 2”
+Test Case #8
+- Handwritten expectation: Allow user to enter items, and apply meal deal if drink and food are both selected.
+- Input(s): matcha, 2, toast, 2, done, y
+- Workings: Attempt 2 – testing if meal deal works
+- Expected output: Take user through program, calculate total with 5% student discount, 5 % meal deal and tax applied and show order summary.
+- Program run (screenshot or transcript):
+  
+- Actual output: Subtotal, Student discount applied, Meal deal applied and tax added.
+Result: Pass.
+Test Case #9
+- Handwritten expectation: Allow user to enter items but do not apply meal deal
+- Input(s): matcha, 2, latte, 1, done, y
+- Workings: Attempt 1 – testing if meal deal works
+- Expected output: Take user through program, calculate total with 5% student discount, no meal deal and tax applied and show order summary.
+- Program run (screenshot or transcript):
+  
+- Actual output: Subtotal, Student discount applied, Meal deal not applied and tax added
+Result: Pass
