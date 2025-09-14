@@ -1,0 +1,16 @@
+1.	Input: Ask, what would the user like to order?
+2.	Process: 
+-	Task A: Check if item available from menu
+-	If available from menu, validate input 
+-	Ask for quantity, validate quantity
+-	Add to cart
+-	Loop to ask if user would like to order more items, view cart, or enter ‘done’ to complete order
+-	Task B: Take user to checkout
+-	Task C: Check if user is a student
+-	If user is a student apply 5% discount.
+-	Else calculate subtotal without discount and add 10% tax.
+3.	Outputs:
+-	Display/view cart
+-	Order summary
+-	Compute tax and discounts
+-	Display receipt, showing subtotal, discount amount (if applicable), tax amount and final total.
