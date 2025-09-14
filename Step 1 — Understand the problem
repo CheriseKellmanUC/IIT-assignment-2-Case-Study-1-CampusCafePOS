@@ -1,0 +1,2 @@
+This is a simple point-of-sale console that will add items in the cart and print a receipt. 
+The program will add items in the cart, calculate tax, calculate a student discount if customer is a student and display the order total after these calculate as a displayed receipt.
