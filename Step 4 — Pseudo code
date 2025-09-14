@@ -1,0 +1,14 @@
+-	Start program
+-	Show menu – Available Items
+-	Start loop
+-	Prompt user to order items, view cart, or enter done.
+-	Check if input items in menu  if in menu, validate input, ask for quantity
+-	Else, if input not valid, ask user to enter valid inputs (i.e. Items displayed in menu only)
+-	Loop until “Done” is entered
+-	Calculate total of items in cart
+-	Ask if user is a student  apply 5% discount
+-	If, not student, no discount, continue to total
+-	Calculate final total (subtotal – discount) + tax for student
+-	OR subtotal + tax, if not student
+-	Display receipt  List of items and quantities, subtotal, tax, discount (if applicable), final total
+-	End
