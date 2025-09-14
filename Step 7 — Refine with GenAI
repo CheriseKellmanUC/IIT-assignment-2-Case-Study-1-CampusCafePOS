@@ -1,0 +1,12 @@
+Student prompt to Copilot:
+“Hey there copilot, can you suggest improvements to my point of sale code. Please keep the program structure and explain changes.”
+
+Copilot Response:
+ 
+Please see screenshots in documents uploaded to canvas
+ 
+ 
+Student Reflection:
+I agree with suggestions to make my view cart function more informative and to rename my variable for student discount to improve the readability of my code. 
+This does let me know I am on the right track, because when I originally wrote the code, I only had one discount in mind. I only added a meal deal to try to see if I could do the stretch activity. 
+I also like the optional ideas copilot suggested at the end for the GUI and saving receipts for record keeping, however I am not there yet with my skills. I do look forward to improving though.
