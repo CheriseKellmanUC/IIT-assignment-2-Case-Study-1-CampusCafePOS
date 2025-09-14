@@ -1,0 +1,140 @@
+#Student name Cherise Kellman
+#Student ID u3167327
+#12 September 2025
+
+## Create a simple POS console, add items to a cart and print a receipt
+
+#Creating a dictionary - menu with 6 items and prices
+
+cafe_menu = {
+    "Latte": 5.50,
+    "Mocha": 6.50,
+    "Matcha": 6.50,
+    "Toast": 5.00,
+    "Bacon": 3.00,
+    "Muffin": 2.50
+}
+
+# Create a cart
+ 
+cart = []
+
+# defining function show_menu
+
+def show_menu():
+    print("Menu: ")
+    for item in cafe_menu:
+        print(f" - {item}: ${cafe_menu[item]:.2f}")
+
+
+def get_quantity(): # accept lower case menu item
+    while True:
+        try:
+            quantity = int(input(f"How many {item}s would you like? "))
+            if quantity <= 0:
+                print("Please enter a positive quantity.")
+                continue
+        except ValueError:
+             print("Invalid quantity. Please enter a number.")
+             continue
+        return quantity
+
+# add function to view_cart
+
+def view_cart():
+    print(f" Your items in cart are: ")
+    for item in cart:
+            print(f"{item[0]}, {item[1]}")
+            
+            
+# Adding function classify food and drink items (stretch activity)
+
+def category(item):
+    drink_items = ["Latte", "Mocha", "Matcha"]
+    food_items = ["Toast", "Bacon", "Muffin"]
+    if item in drink_items:
+        return "Drink"
+    elif item in food_items:
+        return "Food"
+    else:
+        return "Unknown item type"
+
+while True:
+    show_menu()
+    item = input("What would you like to order (or type 'DONE' to finish order. To view your cart, type 'CART'): ")
+    if item.lower() == "latte":
+        item = "Latte"
+    elif item.lower() == "mocha":
+        item = "Mocha"
+    elif item.lower() == "matcha":
+       item = "Matcha"
+    elif item.lower() == "toast":
+        item = "Toast"
+    elif item.lower() == "bacon":
+       item = "Bacon"
+    elif item.lower() == "muffin":
+        item = "Muffin"
+    elif item.lower() == "cart":
+        view_cart()
+        continue
+    elif item.lower() == "done":
+        break
+    else:
+        print("Sorry, that item is not available. Please choose from the menu.")
+        continue
+    qty = get_quantity()
+    cart.append((item, qty))
+    
+# Keeping track of categories selected
+
+selected_categories = set() #stretch activity, used "set"
+
+
+
+#Calculating totals and check out function
+
+def checkout():
+    subtotal = 0  # Get the price of the item
+    for item, qty in cart:
+        selected_categories.add(category(item))
+        price = cafe_menu[item]
+        subtotal += price * qty
+        
+    return subtotal 
+subtotal = checkout()
+original_subtotal = subtotal
+
+
+
+# Meal deal discount - 5% (stretch activity)
+
+if len(selected_categories) >= 2:
+    md_discount = subtotal * 0.05
+else:
+    md_discount = 0
+
+subtotal -= md_discount
+
+#Check if user is student
+
+is_student = input("Are you a student? (Y/N): ")
+if is_student.lower() == "y":
+    discount = subtotal * 0.05 #applies 5% discount
+else:
+    discount = 0
+
+subtotal -= discount
+    
+tax = subtotal * 0.10 #apply 10% tax
+
+total = subtotal + tax
+
+#Display receipt
+print("\nYour order summary:")
+for item, qty in cart:
+    print(f"{qty} x {item} (${cafe_menu[item]:.2f} each)")
+print(f"\nSubtotal: ${original_subtotal:.2f}")
+print(f"Student discount: -${discount:.2f}")
+print(f"Meal deal discount: -${md_discount:.2f}")
+print(f"Tax: +${tax:.2f}")
+print(f"Total: ${total:.2f}")
