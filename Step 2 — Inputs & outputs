@@ -1,0 +1,2 @@
+Inputs: order --> food items, drink items, student status
+Outputs: show menu, show cart, order summary, calculate subtotal, add tax to subtotal, calculate discount, print receipts
